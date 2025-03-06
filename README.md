@@ -52,6 +52,7 @@ After setting up the `.env` file and installing dependencies, you can start the 
 
 ```bash
 python app.py
+```
 
 ## Endpoints
 

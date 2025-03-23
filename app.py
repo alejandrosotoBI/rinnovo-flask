@@ -24,7 +24,7 @@ def get_gallery():
     cursor = conn.cursor()
     
     # Get images from the database based on category
-    query = "SELECT id, category, name, image, thumbnail FROM images"
+    query = "SELECT id, category, name, image, thumbnail FROM gallery"
     cursor.execute(query)
     rows = cursor.fetchall()
     
@@ -33,16 +33,13 @@ def get_gallery():
     for row in rows:
         image_id, category, name, image, thumbnail = row
         
-        # Convert image and thumbnail to base64 strings
-        image_base64 = base64.b64encode(image).decode('utf-8') if image else None
-        thumbnail_base64 = base64.b64encode(thumbnail).decode('utf-8') if thumbnail else None
         
         gallery[category].append({
             "id": image_id,
             "category": category,
             "name": name,
-            "image": f"data:image/jpeg;base64,{image_base64}" if image_base64 else "",
-            "thumbnail": f"data:image/jpeg;base64,{thumbnail_base64}" if thumbnail_base64 else ""
+            "image": image,
+            "thumbnail": thumbnail
         })
     
     cursor.close()

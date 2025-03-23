@@ -1,6 +1,6 @@
 # Flask Gallery API
 
-This is a simple Flask-based API that retrieves images from a PostgreSQL database and serves them as base64-encoded strings in a JSON format. The API supports cross-origin requests (CORS) and returns categorized image data in a gallery format.
+This is a simple Flask-based API that retrieves images from a PostgreSQL database and serves them as URLs in a JSON format. The API supports cross-origin requests (CORS) and returns categorized image data in a gallery format.
 
 ## Installation
 
